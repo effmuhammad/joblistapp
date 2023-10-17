@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:joblistapp/screens/home_screen/mobile/m_body.dart';
+import 'package:joblistapp/screens/home_screen/mobile/m_header.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -14,6 +16,8 @@ class _HomeScreenState extends State<HomeScreen> {
         Center(
           child: Text('Mobile Layout'),
         ),
+        MHeader(),
+        MBody(),
       ],
     );
   }
