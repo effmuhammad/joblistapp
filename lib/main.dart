@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:joblistapp/screens/apply_screen/apply_screen.dart';
 import 'package:joblistapp/screens/home_screen/home_screen.dart';
 import 'package:joblistapp/utils/app_theme.dart';
 
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const HomeScreen(),
+        '/apply': (context) => const ApplyScreen(),
       },
     );
   }

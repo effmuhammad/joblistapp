@@ -15,21 +15,22 @@ class MHeader extends StatelessWidget {
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              const Text(
+            children: const [
+              Text(
                 'Job List App',
                 style: TextStyle(
+                  color: Colors.white,
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              const SizedBox(height: 2),
+              SizedBox(height: 2),
               Text(
                 'by Effry Muhammad',
                 style: TextStyle(
                     fontSize: 10,
                     fontWeight: FontWeight.bold,
-                    color: Theme.of(context).primaryColor),
+                    color: Colors.white54),
               ),
             ],
           ),
@@ -38,15 +39,18 @@ class MHeader extends StatelessWidget {
               IconButton(
                 onPressed: () {},
                 icon: const Icon(Icons.search),
+                color: Colors.white,
               ),
               IconButton(
                 onPressed: () {},
                 icon: const Icon(Icons.notifications),
+                color: Colors.white,
               ),
               IconButton(
                 onPressed: () {},
                 icon: const Icon(
                   Icons.person,
+                  color: Colors.white,
                 ),
               ),
             ],
