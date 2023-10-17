@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 class AppTheme {
   static final ThemeData lightTheme = ThemeData(
     primaryColor: Colors.indigo,
+    colorScheme: const ColorScheme.light(
+      primary: Colors.indigoAccent,
+    ),
     brightness: Brightness.light,
     visualDensity: VisualDensity.adaptivePlatformDensity,
   );

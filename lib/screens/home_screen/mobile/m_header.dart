@@ -28,7 +28,7 @@ class MHeader extends StatelessWidget {
                 style: TextStyle(
                     fontSize: 10,
                     fontWeight: FontWeight.bold,
-                    color: ThemeData.light().primaryColor),
+                    color: Theme.of(context).primaryColor),
               ),
             ],
           ),
@@ -44,7 +44,9 @@ class MHeader extends StatelessWidget {
               ),
               IconButton(
                 onPressed: () {},
-                icon: const Icon(Icons.menu),
+                icon: const Icon(
+                  Icons.person,
+                ),
               ),
             ],
           ),
