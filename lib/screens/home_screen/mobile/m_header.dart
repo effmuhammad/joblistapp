@@ -7,7 +7,8 @@ class MHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 20),
-      height: 60,
+      color: Theme.of(context).colorScheme.secondary,
+      height: 100,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

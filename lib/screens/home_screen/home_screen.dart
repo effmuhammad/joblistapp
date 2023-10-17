@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:joblistapp/screens/home_screen/mobile/m_body.dart';
 import 'package:joblistapp/screens/home_screen/mobile/m_header.dart';
+import 'package:joblistapp/screens/home_screen/widgets/joblist_tile.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -13,9 +14,6 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget _buildMobileLayout() {
     return Column(
       children: const [
-        Center(
-          child: Text('Mobile Layout'),
-        ),
         MHeader(),
         MBody(),
       ],

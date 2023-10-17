@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:joblistapp/screens/home_screen/widgets/joblist_tile.dart';
+import 'package:joblistapp/utils/data_handler.dart';
 
 class MBody extends StatefulWidget {
   const MBody({super.key});
@@ -8,14 +10,13 @@ class MBody extends StatefulWidget {
 }
 
 class _MBodyState extends State<MBody> {
-  final List<String> _joblist = List<String>.generate(100, (i) => "job $i");
-  // late List<Map<String, dynamic>> _joblist;
+  List<Map<String, dynamic>> _joblist = [];
 
   Future<void> refreshItems() async {
-    await Future.delayed(const Duration(seconds: 2));
     setState(() {
       _joblist.shuffle();
     });
+    await Future.delayed(const Duration(seconds: 1));
   }
 
   @override
@@ -23,12 +24,28 @@ class _MBodyState extends State<MBody> {
     return Expanded(
       child: RefreshIndicator(
         onRefresh: refreshItems,
-        child: ListView.builder(
-          itemCount: _joblist.length,
-          itemBuilder: (context, index) {
-            return ListTile(
-              title: Text(_joblist[index]),
-            );
+        child: FutureBuilder<List<Map<String, dynamic>>>(
+          future: _joblist.isEmpty ? DataHandler().loadJobData() : null,
+          builder: (BuildContext context,
+              AsyncSnapshot<List<Map<String, dynamic>>> snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return const CircularProgressIndicator();
+            } else if (snapshot.hasError) {
+              return Text('Error: ${snapshot.error}');
+            } else {
+              _joblist = snapshot.data!;
+              return ListView.builder(
+                itemCount: snapshot.data!.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return JoblistTile(
+                    title: snapshot.data![index]['title'],
+                    employmentType: snapshot.data![index]['employment_type'],
+                    location: snapshot.data![index]['location'],
+                    actionButtonOnPressed: () async => print('apply'),
+                  );
+                },
+              );
+            }
           },
         ),
       ),
