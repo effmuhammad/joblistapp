@@ -13,7 +13,6 @@ class TextForm extends StatelessWidget {
           borderRadius: BorderRadius.all(Radius.circular(20.0)),
         ),
         filled: true,
-        fillColor: Colors.grey[200],
         hintText: 'Enter text here',
       ),
     );

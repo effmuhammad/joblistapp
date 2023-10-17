@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:joblistapp/screens/home_screen/desktop/d_body.dart';
+import 'package:joblistapp/screens/home_screen/desktop/d_header.dart';
 import 'package:joblistapp/screens/home_screen/mobile/m_body.dart';
 import 'package:joblistapp/screens/home_screen/mobile/m_header.dart';
-import 'package:joblistapp/screens/home_screen/widgets/joblist_tile.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -23,9 +24,8 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget _buildDesktopLayout() {
     return Column(
       children: const [
-        Center(
-          child: Text('Desktop Layout'),
-        ),
+        DHeader(),
+        DBody(),
       ],
     );
   }

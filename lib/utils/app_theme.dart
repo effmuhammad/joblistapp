@@ -11,7 +11,10 @@ class AppTheme {
   );
 
   static final ThemeData darkTheme = ThemeData(
-    primaryColor: Colors.indigo,
+    colorScheme: const ColorScheme.dark(
+      primary: Colors.indigoAccent,
+      secondary: Colors.indigo,
+    ),
     brightness: Brightness.dark,
     visualDensity: VisualDensity.adaptivePlatformDensity,
   );

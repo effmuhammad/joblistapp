@@ -53,7 +53,7 @@ class JoblistTile extends StatelessWidget {
             borderRadius: BorderRadius.circular(100),
           ),
         ),
-        child: const Text('Apply'),
+        child: const Text('Apply', style: TextStyle(color: Colors.white)),
       ),
     );
   }
